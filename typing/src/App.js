@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 function App() {
   return (
     <div className="container">
       <div className="valid-keys">
-        <span className="matched" ></span>
-        <span className="remainder" ></span>
+        <span className="matched">emer</span>
+        <span className="remainder">son</span>
       </div>
       <div className="typed-keys">
         
@@ -17,7 +17,7 @@ function App() {
       </div>
       
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

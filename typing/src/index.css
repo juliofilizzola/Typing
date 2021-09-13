@@ -30,3 +30,12 @@ body {
   min-width: 600px;
   border-bottom: solid 2px #fff;
 }
+
+.container .valid-keys .matched {
+  background-color: #fdf8c5;
+  color: #282c34;
+}
+
+.container .valid-keys .remainder {
+  opacity: 0.5;
+}
