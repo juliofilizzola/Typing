@@ -12,7 +12,9 @@ function App() {
       </div>
       <div className="completed-words">
         <ol>
-          <li></li>
+          <li>carros </li>
+          <li> motos </li>
+          <li> oixalbkhkh </li>
         </ol>
       </div>
       

@@ -7,7 +7,7 @@
 
 body {
   width: 100%;
-  min-width: 100vh;
+  min-height: 100vh;
   color: #e1e1e1;
   background-color: #1e1e1e;
   display: flex;
@@ -39,5 +39,19 @@ body {
 }
 
 .container .valid-keys .remainder {
+  opacity: 0.5;
+}
+
+.container .completed-words {
+  width: max-content;
+  height: 100vh;
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  right: 0;
+  text-align: left;
+  padding: 20px 40px;
+  font-size: 1.8rem;
+  line-height: 2.5rem;
   opacity: 0.5;
 }
