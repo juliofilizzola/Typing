@@ -8,9 +8,15 @@ const getWords = () => {
   return word.toLowerCase();
 }
 
+const isValidKey = (key, word) => {
+  if (!word) return false;
+  const result = word.split('').includes(key);
+  return result;
+}
+
 function App() {
   const[typedKeys, setTypedKeys] = React.useState([]);
-  const[validKeys, setValidKeys] = React.useState();
+  const[validKeys, setValidKeys] = React.useState([]);
   const[word, setWord] = React.useState('');
   const Max_Limit = 30;
 
@@ -18,6 +24,14 @@ function App() {
     e.preventDefault();
     const { key } = e;
     setTypedKeys((prevTypedKeys) =>  [...prevTypedKeys, key].slice(Max_Limit * -1));
+
+    if(isValidKey(key, word)) {
+      setValidKeys((prev) => {
+        const isValidLength = prev.length <= word.length;
+        const isNextChar = isValidLength && word[prev.length] === key;
+        return isNextChar ? [...prev, key] : prev;
+      })
+    }
   };
 
   React.useEffect(() => {

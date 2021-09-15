@@ -1,6 +1,5 @@
 import React from 'react';
-
-const Word = ({word}) => {
+  const Word = ({word, validKeys}) => {
   return (
     <div>
       <span className="matched"></span>
