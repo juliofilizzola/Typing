@@ -1,21 +1,33 @@
 import React from 'react';
+import Word from './components/Word';
+import wordList from './resources/words.json';
+
+const getWords = () => {
+  const index = Math.floor(Math.random() * wordList.length);
+  const word = wordList[index];
+  return word.toLowerCase();
+}
 
 function App() {
   const[typedKeys, setTypedKeys] = React.useState([]);
+  const[validKeys, setValidKeys] = React.useState();
+  const[word, setWord] = React.useState('');
+  const Max_Limit = 30;
+
   const handleKeyDown = (e) => {
     e.preventDefault();
     const { key } = e;
-    setTypedKeys((prevTypedKeys) => {
-      return [...prevTypedKeys, key];
-    });
+    setTypedKeys((prevTypedKeys) =>  [...prevTypedKeys, key].slice(Max_Limit * -1));
+  };
 
-  }
+  React.useEffect(() => {
+    setWord(getWords());
+  }, []);
 
   return (
     <div className="container" tabIndex="0" onKeyDown={handleKeyDown}>
       <div className="valid-keys">
-        <span className="matched">emer</span>
-        <span className="remainder">son</span>
+        <Word word={word} validKeys={validKeys} />
       </div>
       <div className="typed-keys">
         { typedKeys? typedKeys.join(" ") : null}
