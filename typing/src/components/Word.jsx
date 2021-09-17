@@ -2,7 +2,7 @@ import React from 'react';
 
 const Word = ({word, validKeys}) => {
   if(!word) return null;
-  const joinedKeys = validKeys.join(',');
+  const joinedKeys = validKeys.join('');
   const matched = word.slice(0 , joinedKeys.length);
   const remainder = word.slice(joinedKeys.length);
 
@@ -14,4 +14,4 @@ const Word = ({word, validKeys}) => {
   );
 };
 
-export default Word
+export default Word;

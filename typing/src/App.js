@@ -15,7 +15,7 @@ const isValidKey = (key, word) => {
 }
 
 function App() {
-  const[typedKeys, setTypedKeys] = React.useState([]);
+  const[typedKeys, setTypedKeys] = React.useState(['']);
   const[validKeys, setValidKeys] = React.useState([]);
   const[completedWords, setCompletedWords] = React.useState([]);
   const[word, setWord] = React.useState('');
